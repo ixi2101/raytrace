@@ -36,6 +36,8 @@ class vec3 {
         vec3 operator*(const vec3 &v) const;
         vec3 operator*(double t) const;
         vec3 operator/(double t) const;
+        bool operator==(const vec3 &v) const;
+        bool operator!=(const vec3 &v) const;
         static double dot(const vec3 &u, const vec3 &v);
         static vec3 cross(const vec3 &u, const vec3 &v);
         static vec3 unit_vector(vec3 v);

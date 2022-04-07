@@ -127,3 +127,20 @@ TEST(Vec3Util, unitvector){
     EXPECT_NEAR(res.z(), 0.707, 0.001);
     EXPECT_DOUBLE_EQ(res.length(), 1);
 }
+
+TEST(Vec3Util, equality){
+    auto v = vec3{0,0,0};
+    auto v2 = vec3{0,0,0};
+    auto v3 = vec3{1,1,2};
+
+    EXPECT_TRUE(v==v2);
+    EXPECT_FALSE(v==v3);
+}
+TEST(Vec3Util, NEquality){
+    auto v = vec3{0,0,0};
+    auto v2 = vec3{0,0,0};
+    auto v3 = vec3{1,1,2};
+
+    EXPECT_FALSE(v!=v2);
+    EXPECT_TRUE(v!=v3);
+}
