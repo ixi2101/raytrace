@@ -31,7 +31,6 @@ class vec3 {
 
         // Utility functions
 
-        //std::ostream& operator<<(std::ostream &out, const vec3 &v);
         vec3 operator-(const vec3 &v) const;
         vec3 operator+(const vec3 &v) const;
         vec3 operator*(const vec3 &v) const;
@@ -44,7 +43,7 @@ class vec3 {
 };
 
 vec3 operator*(double t, const vec3& v);
-
+std::ostream& operator<<(std::ostream &out, const vec3 &v);
 
 using point3 = vec3;
 using color = vec3;
