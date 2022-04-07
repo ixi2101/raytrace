@@ -3,15 +3,15 @@
 
 
 point3 ray::origin() const {
-    return this->orig;
+    return orig;
 }
 
 vec3 ray::direction() const{
-    return this->dir;
+    return dir;
 }
 
 point3 ray::at(double t) const {
-    point3 ans;
-    ans = orig + t*dir;
-    return ans;
+    
+    return orig + (dir * t);
+
 }

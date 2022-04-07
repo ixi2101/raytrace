@@ -8,3 +8,4 @@ target_link_libraries(ray_test gtest_main raytracinglib)
 
 include(GoogleTest)
 gtest_discover_tests(vec3_test)
+gtest_discover_tests(ray_test)
