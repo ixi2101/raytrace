@@ -1,2 +1,2 @@
 # raytrace
-ray tracing tutorial
+Following ray tracing tutorial
