@@ -1,4 +1,7 @@
 #include <iostream>
+#include "color.hpp"
+#include "vec3.hpp"
+
 
 int main() {
 
@@ -14,15 +17,8 @@ int main() {
     for (int j = image_height-1; j >= 0; --j) {
         std::cerr << "\r Scanlines remaining: " << j << ' ' << std::flush;
         for (int i = 0; i < image_width; ++i) {
-            auto r = double(i) / (image_width-1);
-            auto g = double(j) / (image_height-1);
-            auto b = 0.25;
-
-            auto ir = static_cast<int>(255.999 * r);
-            auto ig = static_cast<int>(255.999 * g);
-            auto ib = static_cast<int>(255.999 * b);
-
-            std::cout << ir << ' ' << ig << ' ' << ib << '\n';
+            color pixel_color(double(i)/(image_width-1), double(j)/(image_height-1), 0.25);
+            write_color(std::cout, pixel_color);
         }
     }
 
