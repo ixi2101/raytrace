@@ -102,3 +102,28 @@ TEST(Vec3Overloads, DIVIDE){
     EXPECT_EQ(v3.y(), 1.5);
     EXPECT_EQ(v3.z(), 2);
 }
+
+TEST(Vec3Util, dot){
+    auto v = vec3{1,1,1};
+    auto v2 = vec3{2,2,2};
+    auto res = vec3::dot(v, v2);
+    EXPECT_EQ(res,6);
+}
+
+TEST(Vec3Util, cross){
+    auto v = vec3{1,1,1};
+    auto v2 = vec3{2,2,2};
+    auto res = vec3::cross(v, v2);
+    EXPECT_EQ(res.x(), 0);
+    EXPECT_EQ(res.y(), 0);
+    EXPECT_EQ(res.z(), 0);
+}
+
+TEST(Vec3Util, unitvector){
+    auto v = vec3{3,4,5};
+    auto res = vec3::unit_vector(v);
+    EXPECT_NEAR(res.x(), 0.424, 0.001);
+    EXPECT_NEAR(res.y(), 0.565, 0.001);
+    EXPECT_NEAR(res.z(), 0.707, 0.001);
+    EXPECT_DOUBLE_EQ(res.length(), 1);
+}
