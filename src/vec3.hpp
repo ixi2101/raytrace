@@ -6,16 +6,15 @@
 #include <array>
 #include <ostream>
 
-using std::sqrt;
 
 class vec3 {
     public:
         vec3();
         vec3(double e0, double e1, double e2);
 
-        double x();
-        double y();
-        double z();
+        double x() const;
+        double y() const;
+        double z() const;
 
         vec3 operator-();
         double operator[](int i) const;

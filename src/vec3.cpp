@@ -9,9 +9,9 @@ vec3::vec3(double e0, double e1, double e2){
     this->e = {e0, e1, e2};
 }
 
-auto vec3::x() -> double { return this->e[0]; }
-auto vec3::y() -> double { return this->e[1]; }
-auto vec3::z() -> double { return this->e[2]; }
+auto vec3::x() const -> double { return this->e[0]; }
+auto vec3::y() const -> double { return this->e[1]; }
+auto vec3::z() const -> double { return this->e[2]; }
 
 vec3 vec3::operator-() {
     return vec3{-x(), -y(), -z()};
@@ -44,7 +44,7 @@ vec3& vec3::operator/=(const double t){
 }
 
 double vec3::length() const {
-    return sqrt(this->length_squared());
+    return std::sqrt(this->length_squared());
 }
 
 double vec3::length_squared() const {
