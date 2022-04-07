@@ -12,10 +12,5 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 enable_testing()
-add_executable(vec3_test test/vec3_test.cpp)
-target_link_libraries(vec3_test gtest_main)
-
-include(GoogleTest)
-gtest_discover_tests(vec3_test)
-
+add_subdirectory(test)
 add_subdirectory(src)
