@@ -21,4 +21,5 @@ TEST(Ray, ray_at){
     auto r = ray(orig,dir); 
     auto expected = point3{4,0,0};
     EXPECT_TRUE(r.at(4) == expected);
+    
     }
